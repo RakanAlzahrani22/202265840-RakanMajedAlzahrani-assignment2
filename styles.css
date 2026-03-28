@@ -179,11 +179,12 @@ body {
   border-radius: 16px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.02);
-  transition: transform 0.15s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .project-card:hover {
   transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
 .project-img {
@@ -205,6 +206,44 @@ body {
 .project-content p {
   color: #cbd5e1;
   margin-bottom: 12px;
+}
+
+.projects-controls {
+  margin: 18px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 420px;
+}
+
+.projects-controls label {
+  font-weight: 600;
+}
+
+.projects-controls input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(226, 232, 240, 0.2);
+  background: rgba(255, 255, 255, 0.03);
+  color: #e2e8f0;
+  font-family: inherit;
+}
+
+.projects-controls input:focus {
+  outline: none;
+  border-color: #38bdf8;
+}
+
+.search-status {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  min-height: 1.2rem;
+}
+
+.empty-state {
+  margin-top: 18px;
+  color: #94a3b8;
+  font-weight: 600;
 }
 
 /* Tags */
