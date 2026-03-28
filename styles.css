@@ -121,6 +121,20 @@ body {
   transform: translateY(-1px);
 }
 
+.theme-toggle {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(226, 232, 240, 0.2);
+  background: transparent;
+  color: #e2e8f0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
 /* Image */
 .about-image img {
   width: 100%;
@@ -154,6 +168,7 @@ body {
   .about-buttons {
     justify-content: center;
   }
+}
   /* Section titles */
 .section-title {
   font-size: 1.8rem;
@@ -304,5 +319,80 @@ body {
   border-color: #38bdf8;
 }
 
-
+.error-message {
+  color: #f87171;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  min-height: 18px;
 }
+
+.success-message {
+  margin-top: 14px;
+  color: #4ade80;
+  font-weight: 600;
+}
+
+/* Themes */
+body.light-theme {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+body.light-theme .header {
+  background: rgba(248, 250, 252, 0.95);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+body.light-theme .logo,
+body.light-theme .nav-links a,
+body.light-theme .theme-toggle,
+body.light-theme .title,
+body.light-theme .section-title,
+body.light-theme .project-content h3,
+body.light-theme .form-group label {
+  color: #0f172a;
+}
+
+body.light-theme .tagline {
+  color: #2563eb;
+}
+
+body.light-theme .intro,
+body.light-theme .section-subtitle,
+body.light-theme .project-content p,
+body.light-theme .search-status,
+body.light-theme .empty-state,
+body.light-theme .footer {
+  color: #475569;
+}
+
+body.light-theme .project-card,
+body.light-theme .contact-form input,
+body.light-theme .contact-form textarea,
+body.light-theme .theme-toggle {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+body.light-theme .btn.outline {
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.18);
+}
+
+body.light-theme .project-tags span {
+  color: #1e293b;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  background: #e2e8f0;
+}
+
+body.light-theme .btn.primary {
+  background: #0ea5e9;
+  color: white;
+}
+
+body.light-theme .theme-toggle:hover {
+  background: #e2e8f0;
+}
+
+
+

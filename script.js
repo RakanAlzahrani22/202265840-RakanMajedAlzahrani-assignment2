@@ -2,6 +2,26 @@
 // Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// Theme Toggles
+const themeToggle = document.getElementById("themeToggle");
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "light") {
+  document.body.classList.add("light-theme");
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", function () {
+    document.body.classList.toggle("light-theme");
+
+    if (document.body.classList.contains("light-theme")) {
+      localStorage.setItem("theme", "light");
+    } else {
+      localStorage.setItem("theme", "dark");
+    }
+  });
+}
+
 // Project search filter
 const projectSearch = document.getElementById("projectSearch");
 const projectCards = document.querySelectorAll(".project-card");
@@ -41,15 +61,59 @@ if (projectSearch) {
   searchStatus.textContent = "Showing all projects.";
 }
 
-// Contact form interaction
+// Contact form validation
 const form = document.querySelector(".contact-form");
 
 if (form) {
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const messageInput = document.getElementById("message");
+
+  const nameError = document.getElementById("nameError");
+  const emailError = document.getElementById("emailError");
+  const messageError = document.getElementById("messageError");
+  const formSuccess = document.getElementById("formSuccess");
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    alert("Thank you! Your message has been sent.");
+    let isValid = true;
 
-    form.reset();
+    nameError.textContent = "";
+    emailError.textContent = "";
+    messageError.textContent = "";
+    formSuccess.style.display = "none";
+
+    const nameValue = nameInput.value.trim();
+    const emailValue = emailInput.value.trim();
+    const messageValue = messageInput.value.trim();
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (nameValue === "") {
+      nameError.textContent = "Please enter your name.";
+      isValid = false;
+    }
+
+    if (emailValue === "") {
+      emailError.textContent = "Please enter your email.";
+      isValid = false;
+    } else if (!emailPattern.test(emailValue)) {
+      emailError.textContent = "Please enter a valid email address.";
+      isValid = false;
+    }
+
+    if (messageValue === "") {
+      messageError.textContent = "Please enter your message.";
+      isValid = false;
+    } else if (messageValue.length < 10) {
+      messageError.textContent = "Message should be at least 10 characters.";
+      isValid = false;
+    }
+
+    if (isValid) {
+      formSuccess.style.display = "block";
+      form.reset();
+    }
   });
 }
