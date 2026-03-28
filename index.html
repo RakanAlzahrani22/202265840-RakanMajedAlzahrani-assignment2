@@ -54,10 +54,20 @@
     These are two JavaFX projects I worked on during my studies.
   </p>
 
+  <div class="projects-controls">
+    <label for="projectSearch">Search projects</label>
+    <input
+      type="text"
+      id="projectSearch"
+      placeholder="Search by title or technology"
+    />
+    <p id="searchStatus" class="search-status"></p>
+  </div>
+
   <div class="projects-grid">
 
     <!-- Project 1 -->
-    <article class="project-card">
+    <article class="project-card" data-search="facelite java javafx oop profile management friends">
       <img
         class="project-img"
         src="facelite.png"
@@ -86,7 +96,7 @@
     </article>
 
     <!-- Project 2 -->
-    <article class="project-card">
+    <article class="project-card" data-search="resource reserving system java javafx mysql mvc reservation login signup database">
       <img
         class="project-img"
         src="ResourceReservingSystem.png"
@@ -116,6 +126,10 @@
     </article>
 
   </div>
+
+<p id="emptyState" class="empty-state" style="display: none;">
+  No projects found. Try another search term.
+</p>
 </section>
 
 
