@@ -51,14 +51,14 @@ This version improves the original portfolio by adding interactive and dynamic b
 ## Project Structure
 
 ```text
-assignment-2/
+202265840-RakanMajedAlzahrani-assignment2/
+├── Docs/
+│   ├── ai-usage-report.md
+│   └── technical-documentation.md
+├── FaceLite.png
 ├── README.md
-├── index.html
-├── styles.css
-├── script.js
-├── profileimage.png
-├── facelite.png
 ├── ResourceReservingSystem.png
-└── docs/
-    ├── ai-usage-report.md
-    └── technical-documentation.md
+├── index.html
+├── profileimage.png
+├── script.js
+└── styles.css
