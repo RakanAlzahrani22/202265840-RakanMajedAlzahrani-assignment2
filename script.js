@@ -14,16 +14,16 @@ if (projectSearch) {
     let visibleCount = 0;
 
     projectCards.forEach(function (card) {
-      const searchableText = card.dataset.search.toLowerCase();
-      const matches = searchableText.includes(query);
+  const searchableText = (card.dataset.search || "").toLowerCase();
+  const matches = searchableText.includes(query);
 
-      if (matches) {
-        card.style.display = "block";
-        visibleCount++;
-      } else {
-        card.style.display = "none";
-      }
-    });
+  if (matches) {
+    card.style.display = "";
+    visibleCount++;
+  } else {
+    card.style.display = "none";
+  }
+});
 
     if (query === "") {
       searchStatus.textContent = "Showing all projects.";
@@ -44,10 +44,12 @@ if (projectSearch) {
 // Contact form interaction
 const form = document.querySelector(".contact-form");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault(); // prevent actual submission
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  alert("Thank you! Your message has been sent.");
+    alert("Thank you! Your message has been sent.");
 
-  form.reset(); // clear form
-});
+    form.reset();
+  });
+}
