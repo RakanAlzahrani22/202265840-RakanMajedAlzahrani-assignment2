@@ -83,6 +83,7 @@ if (form) {
     emailError.textContent = "";
     messageError.textContent = "";
     formSuccess.style.display = "none";
+    formSuccess.classList.remove("show");
 
     const nameValue = nameInput.value.trim();
     const emailValue = emailInput.value.trim();
@@ -112,8 +113,13 @@ if (form) {
     }
 
     if (isValid) {
-      formSuccess.style.display = "block";
-      form.reset();
-    }
+    formSuccess.style.display = "block";
+
+    setTimeout(function () {
+      formSuccess.classList.add("show");
+    }, 10);
+
+    form.reset();
+  }
   });
 }

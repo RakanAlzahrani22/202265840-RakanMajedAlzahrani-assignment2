@@ -105,6 +105,7 @@ body {
   border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn.primary {
@@ -118,7 +119,8 @@ body {
 }
 
 .btn:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
 .theme-toggle {
@@ -330,6 +332,14 @@ body {
   margin-top: 14px;
   color: #4ade80;
   font-weight: 600;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.success-message.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Themes */
